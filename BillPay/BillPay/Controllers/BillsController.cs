@@ -130,6 +130,29 @@ namespace BillPay.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult Calculator()
+        {
+            string id = User.Identity.GetUserId();
+            var bills = db.Bills.Where(x => x.UserID == id).ToList();
+            ViewBag.billList = bills;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Calculator(DateTime from, DateTime to)
+        {
+            string id = User.Identity.GetUserId();
+            ViewBag.from = from;
+            ViewBag.to = to;
+            var bills = db.Bills.Where(x => x.UserID == id && x.DueDate > from && x.DueDate < to).ToList();
+
+            ViewBag.billList = bills;
+
+
+            return View();
+        }
+
         public ActionResult Calendar()
         {
             return View();

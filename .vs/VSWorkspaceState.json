@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\BillPay"
   ],
+  "SelectedNode": "\\BillPay\\BillPay.sln",
   "PreviewInSolutionExplorer": false
 }
