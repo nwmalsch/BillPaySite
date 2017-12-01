@@ -1,0 +1,69 @@
+﻿@model IEnumerable<BillPay.Models.Bill>
+
+@{
+    ViewBag.Title = "Calculator";
+}
+
+<h2>Calculator</h2>
+
+
+@using (Html.BeginForm())
+{
+    <script>
+
+
+        $(function () {
+            //var start;
+            //var end;
+            var dateFormat = "mm/dd/yy",
+                from = $("#from")
+                    .datepicker({
+                        defaultDate: "+1d",
+                        changeMonth: true,
+                        changeYear: true,
+                        numberOfMonths: 3
+                    })
+                    .on("change", function () {
+                        to.datepicker("option", "minDate", getDate(this));
+                    }),
+                //start = $("#from").datepicker("getDate");
+
+            to = $("#to").datepicker({
+                defaultDate: "+2d",
+                changeMonth: true,
+                changeYear: true,
+                numberOfMonths: 3
+            })
+                .on("change", function () {
+                    from.datepicker("option", "maxDate", getDate(this));
+                });
+            //end = $("#to").datepicker("getDate");
+
+            function getDate(element) {
+                var date;
+                try {
+                    date = $.datepicker.parseDate(dateFormat, element.value);
+                } catch (error) {
+                    date = null;
+                }
+
+                return date;
+            }
+
+        });
+    </script>
+
+    <label for="from">From</label>
+    <input type="text" id="from" name="from">
+    <label for="to">to</label>
+    <input type="text" id="to" name="to">
+    <input type="submit" id="GetBills" value="Submit" />
+
+}
+<table>
+    <thead>Bills</thead>
+</table>
+@foreach (var b in ViewBag.billList)
+{
+    <p>@b.Name @b.DueDate @b.Cost</p>
+}

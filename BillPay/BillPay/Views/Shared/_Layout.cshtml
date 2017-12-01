@@ -8,6 +8,10 @@
     @Styles.Render("~/Content/fullcalendarcss")
     @Scripts.Render("~/bundles/modernizr")
 
+    <script type="text/javascript" src="~/Scripts/jquery-3.2.1.js"></script>
+    <script src="~/Scripts/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/Content/jquery-ui.css">
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -42,6 +46,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/fullcalendarjs")
     @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/jquery-ui.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
