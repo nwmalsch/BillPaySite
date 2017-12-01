@@ -27,7 +27,14 @@
                 $('#myModal #eventTitle').text(calEvent.title);
                 var $description = $('<div/>');
                 $description.append($('<p/>').html('<b>Start:</b>' + calEvent.start.format("DD-MMM-YYYY")));
-                $description.append($('<p/>').html('<b>Description:</b>' + calEvent.description));
+                if (calEvent.description != null && calEvent.description.substring(0, 8) != "https://") {
+                    
+                    $description.append($('<p/>').html('<b>Website: </b> <a href="https://' + calEvent.description + '">' + calEvent.description + '</a>'));
+                }
+                else if (calEvent.description != null && calEvent.description.substring(0, 8) == "https://") {
+      
+                    $description.append($('<p/>').html('<b>Website: </b> <a href="' + calEvent.description + '">' + calEvent.description + '</a>'));
+                }
                 $('#myModal #pDetails').empty().html($description);
 
                 $('#myModal').modal();
