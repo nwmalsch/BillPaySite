@@ -23,7 +23,6 @@
             },
             defaultView: 'month',
             events: "/Bills/GetBills",
-            allDayDefault: true,
             eventClick: function (calEvent, jsEvent, view) {
                 $('#myModal #eventTitle').text(calEvent.title);
                 var $description = $('<div/>');
