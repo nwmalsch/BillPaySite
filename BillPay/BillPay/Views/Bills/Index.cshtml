@@ -15,16 +15,16 @@
             @Html.DisplayNameFor(model => model.User.Email)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm })        
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Website)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Cost)
+            @Html.ActionLink("Cost", "Index", new { sortOrder = ViewBag.CostSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DueDate)
+            @Html.ActionLink("Due Date", "Index", new { sortOrder = ViewBag.DateSortParm })
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Color)
