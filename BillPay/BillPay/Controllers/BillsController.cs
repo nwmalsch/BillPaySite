@@ -17,34 +17,9 @@ namespace BillPay.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Bills
-        public ActionResult Index(string sortOrder)
+        public ActionResult Index()
         {
             var bills = db.Bills.Include(b => b.User);
-            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "Name_desc" : "";
-            ViewBag.DateSortParm = sortOrder == "Date" ? "Date_desc" : "Date";
-            ViewBag.CostSortParm = sortOrder == "Cost" ? "Cost_desc" : "Cost";
-            switch (sortOrder)
-            {
-                case "Name_desc":
-                    bills = bills.OrderByDescending(b => b.Name);
-                    break;
-                case "Date":
-                    bills = bills.OrderBy(b => b.DueDate);
-                    break;
-                case "Date_desc":
-                    bills = bills.OrderByDescending(b => b.DueDate);
-                    break;
-                case "Cost":
-                    bills = bills.OrderBy(b => b.Cost);
-                    break;
-                case "Cost_desc":
-                    bills = bills.OrderByDescending(b => b.Cost);
-                    break;
-                default:
-                    bills = bills.OrderBy(b => b.Name);
-                    break;
-            }
-
             return View(bills.ToList());
         }
 
@@ -66,8 +41,6 @@ namespace BillPay.Controllers
         // GET: Bills/Create
         public ActionResult Create()
         {
-            string [] colors = new string[] { "Red", "Blue", "Green", "Yellow", "Silver", "Black", "Teal", "Purple" };
-            ViewBag.Colors = new SelectList(colors);
             ViewBag.UserID = new SelectList(db.Users, "Id", "Email");
             return View();
         }
@@ -103,8 +76,6 @@ namespace BillPay.Controllers
             {
                 return HttpNotFound();
             }
-            string[] colors = new string[] { "Red", "Blue", "Green", "Yellow", "Silver", "Black", "Teal", "Purple" };
-            ViewBag.colors = new SelectList(colors);
             ViewBag.UserID = new SelectList(db.Users, "Id", "Email", bill.UserID);
             return View(bill);
         }
@@ -198,14 +169,12 @@ namespace BillPay.Controllers
         {
             string id = User.Identity.GetUserId();
             var bills = db.Bills.ToList().Where(b => b.UserID == id);
-            ViewBag.bills = bills;
             var events = new List<Events>();
 
             foreach (Bill b in bills)
             {
                 Events e = new Events
                 {
-                    id = b.BillID,
                     title = b.Name,
                     description = b.Website,
                     start = b.DueDate,
@@ -220,7 +189,6 @@ namespace BillPay.Controllers
 }
 public class Events
 {
-    public int id { get; set; }
     public string title { get; set; }
     public string description { get; set; }
     public DateTime start { get; set; }

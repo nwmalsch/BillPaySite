@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\BillPay"
+    "\\BillPay",
+    "\\BillPay\\BillPay",
+    "\\BillPay\\BillPay\\Controllers",
+    "\\BillPay\\BillPay\\Views",
+    "\\BillPay\\BillPay\\Views\\Bills",
+    "\\BillPay\\BillPay\\Views\\Shared"
   ],
   "SelectedNode": "\\BillPay\\BillPay.sln",
   "PreviewInSolutionExplorer": false
