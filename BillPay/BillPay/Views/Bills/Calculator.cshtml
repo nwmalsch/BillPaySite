@@ -53,17 +53,73 @@
         });
     </script>
 
-    <label for="from">From</label>
-    <input type="text" id="from" name="from">
-    <label for="to">to</label>
-    <input type="text" id="to" name="to">
-    <input type="submit" id="GetBills" value="Submit" />
+    <label for="from">Calculate Bills From</label>
+    <input type="text" id="from" name="from" placeholder="Click to choose date">
+    <label for="to">To</label>
+    <input type="text" id="to" name="to" placeholder="Click to choose date">
+    <input type="submit" id="GetBills" value="Get Bills" />
 
 }
-<table>
-    <thead>Bills</thead>
-</table>
-@foreach (var b in ViewBag.billList)
+@if (ViewBag.billList != null)
 {
-    <p>@b.Name @b.DueDate @b.Cost</p>
+    <table class="table">
+        <thead>Bills</thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DueDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cost)
+            </th>
+        </tr>
+
+        @foreach (var b in ViewBag.billList)
+        {
+            <tr>
+                <td>
+                    @b.Name
+                </td>
+                <td>
+                    @b.DueDate
+                </td>
+                <td>
+                    @b.Cost
+                </td>
+            </tr>
+        }
+    </table>
+
+    @*
+        @Html.Raw(ViewBag.budget)
+    *@
+    int Budget = (int)ViewBag.budget;
+    <label for="Amount">Enter Starting Amount $</label>
+    <input type="number" id="Amount" name="Amount" step="0.01" placeholder="0.00" min="0">
+    <input type="submit" id="GetTotal" value="Total" onclick="total()"/>
+    <input type="text" id="total" name="Total" />
+    <div id="blah"></div>
+
+    <script>
+        function total()
+        {
+            var amount = document.getElementById("Amount").value;
+            var budget = @ViewBag.budget;
+            var totalAmount = parseInt(amount) - parseInt(budget);
+            if (!isNaN(totalAmount)) {
+                document.getElementById('total').value = totalAmount;
+                
+            }
+
+
+        }
+    </script>
+
+
+    {
+
+    }
 }
+
