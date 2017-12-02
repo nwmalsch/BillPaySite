@@ -238,3 +238,9 @@ C:\Users\Patrick\Documents\BillPay\BillPay\BillPay\obj\Debug\BillPay.dll
 C:\Users\Patrick\Documents\BillPay\BillPay\BillPay\obj\Debug\BillPay.pdb
 C:\Users\Patrick\Documents\BillPay\BillPay\BillPay\obj\Debug\BillPay.Migrations.Blah.resources
 C:\Users\Patrick\Documents\BillPay\BillPay\BillPay\obj\Debug\BillPay.csproj.GenerateResource.Cache
+C:\Users\Dorian\Source\Repos\BillPaySite\BillPay\BillPay\obj\Debug\BillPay.csprojResolveAssemblyReference.cache
+C:\Users\Dorian\Source\Repos\BillPaySite\BillPay\BillPay\obj\Debug\BillPay.Migrations.Blah.resources
+C:\Users\Dorian\Source\Repos\BillPaySite\BillPay\BillPay\obj\Debug\BillPay.csproj.GenerateResource.Cache
+C:\Users\Dorian\Source\Repos\BillPaySite\BillPay\BillPay\obj\Debug\BillPay.csproj.CoreCompileInputs.cache
+C:\Users\Dorian\Source\Repos\BillPaySite\BillPay\BillPay\obj\Debug\BillPay.dll
+C:\Users\Dorian\Source\Repos\BillPaySite\BillPay\BillPay\obj\Debug\BillPay.pdb

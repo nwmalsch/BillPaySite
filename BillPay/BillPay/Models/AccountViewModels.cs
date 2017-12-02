@@ -65,11 +65,11 @@ namespace BillPay.Models
     public class RegisterViewModel
     {
         [Required]
-        [Display(Name = "First Name")]
+        [DisplayAttribute(Name = "First Name")]
         public string FirstName { get; set; }
 
         [Required]
-        [Display(Name = "Last Name")]
+        [DisplayAttribute(Name = "Last Name")]
         public string LastName { get; set; }
 
         [Required]
