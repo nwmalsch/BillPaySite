@@ -23,7 +23,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Bill Pay Application", "Login", "Account", new { area = "" }, new { @class = "navbar-brand" })
+                @if (User.Identity.IsAuthenticated)
+                {
+                    @Html.ActionLink("Bill Pay", "Index", "Manage", new { area = "" }, new { @class = "navbar-brand" });
+                }
+                else
+                {
+                    @Html.ActionLink("Bill Pay", "Login", "Account", new { area = "" }, new { @class = "navbar-brand" })
+
+                }
+
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
