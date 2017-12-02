@@ -360,4 +360,3 @@ C:\Users\Nathan\Source\Repos\BillPaySite\BillPay\BillPay\obj\Release\BillPay.csp
 C:\Users\Nathan\Source\Repos\BillPaySite\BillPay\BillPay\obj\Release\BillPay.csproj.CoreCompileInputs.cache
 C:\Users\Nathan\Source\Repos\BillPaySite\BillPay\BillPay\obj\Release\BillPay.dll
 C:\Users\Nathan\Source\Repos\BillPaySite\BillPay\BillPay\obj\Release\BillPay.pdb
-C:\Users\Nathan\Source\Repos\BillPaySite\BillPay\BillPay\obj\Release\BillPay.Migrations.Calculator.resources

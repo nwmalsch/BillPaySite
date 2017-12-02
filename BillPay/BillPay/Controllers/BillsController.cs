@@ -135,7 +135,8 @@ namespace BillPay.Controllers
         {
             string id = User.Identity.GetUserId();
             var bills = db.Bills.Where(x => x.UserID == id).ToList();
-            ViewBag.billList = bills;
+            ViewBag.billList = null;
+            ViewBag.budget = 0;
             return View();
         }
 
@@ -146,7 +147,13 @@ namespace BillPay.Controllers
             ViewBag.from = from;
             ViewBag.to = to;
             var bills = db.Bills.Where(x => x.UserID == id && x.DueDate > from && x.DueDate < to).ToList();
+            decimal budget = 0;
 
+            foreach (var b in bills)
+            {
+                budget += b.Cost;
+            }
+            ViewBag.budget = budget;
             ViewBag.billList = bills;
 
 
