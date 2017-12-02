@@ -32,7 +32,7 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (BillPay.Models.Bill item in Model.ToList().Where(item => item.User.Email == User.Identity.Name)) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.User.Email)
