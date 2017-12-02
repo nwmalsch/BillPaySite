@@ -360,3 +360,7 @@ C:\Users\Nathan\Source\Repos\BillPaySite\BillPay\BillPay\obj\Release\BillPay.csp
 C:\Users\Nathan\Source\Repos\BillPaySite\BillPay\BillPay\obj\Release\BillPay.csproj.CoreCompileInputs.cache
 C:\Users\Nathan\Source\Repos\BillPaySite\BillPay\BillPay\obj\Release\BillPay.dll
 C:\Users\Nathan\Source\Repos\BillPaySite\BillPay\BillPay\obj\Release\BillPay.pdb
+C:\Users\Patrick\Source\Repos\BillPaySite\BillPay\BillPay\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\Patrick\Source\Repos\BillPaySite\BillPay\BillPay\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Patrick\Source\Repos\BillPaySite\BillPay\BillPay\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\Patrick\Source\Repos\BillPaySite\BillPay\BillPay\bin\System.Diagnostics.DiagnosticSource.xml
