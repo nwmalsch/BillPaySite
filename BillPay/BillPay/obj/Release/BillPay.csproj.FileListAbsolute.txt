@@ -481,3 +481,7 @@ C:\Users\Dorian\Source\Repos\BillPaySite\BillPay\BillPay\bin\Microsoft.AI.Depend
 C:\Users\Dorian\Source\Repos\BillPaySite\BillPay\BillPay\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\Dorian\Source\Repos\BillPaySite\BillPay\BillPay\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Dorian\Source\Repos\BillPaySite\BillPay\BillPay\bin\Microsoft.AI.Web.xml
+C:\Users\Dorian\Source\Repos\BillPaySite\BillPay\BillPay\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\Dorian\Source\Repos\BillPaySite\BillPay\BillPay\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Dorian\Source\Repos\BillPaySite\BillPay\BillPay\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\Dorian\Source\Repos\BillPaySite\BillPay\BillPay\bin\System.Diagnostics.DiagnosticSource.xml
