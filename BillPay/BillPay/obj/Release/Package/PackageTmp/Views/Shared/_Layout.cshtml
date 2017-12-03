@@ -6,7 +6,12 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/fullcalendarcss")
+    @Styles.Render("~/Content/fullcalendarcss")
     @Scripts.Render("~/bundles/modernizr")
+
+    <script type="text/javascript" src="~/Scripts/jquery-3.2.1.js"></script>
+    <script src="~/Scripts/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/Content/jquery-ui.css">
 
 </head>
 <body>
@@ -18,13 +23,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @if (User.Identity.IsAuthenticated)
+                {
+                    @Html.ActionLink("Bill Pay", "Index", "Manage", new { area = "" }, new { @class = "navbar-brand" });
+                }
+                else
+                {
+                    @Html.ActionLink("Bill Pay", "Login", "Account", new { area = "" }, new { @class = "navbar-brand" })
+
+                }
+
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                    <li>@Html.ActionLink("Calendar", "Calendar", "Bills")</li>
+                    <li>@Html.ActionLink("Calculator", "Calculator", "Bills")</li>
+                    <li>@Html.ActionLink("Bills", "Index", "Bills")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -34,7 +52,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Bill Pay Application</p>
         </footer>
     </div>
 
@@ -42,6 +60,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/fullcalendarjs")
     @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/jquery-ui.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

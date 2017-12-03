@@ -23,11 +23,20 @@
             },
             defaultView: 'month',
             events: "/Bills/GetBills",
+            allDayDefault: true,
             eventClick: function (calEvent, jsEvent, view) {
                 $('#myModal #eventTitle').text(calEvent.title);
                 var $description = $('<div/>');
                 $description.append($('<p/>').html('<b>Start:</b>' + calEvent.start.format("DD-MMM-YYYY")));
-                $description.append($('<p/>').html('<b>Description:</b>' + calEvent.description));
+                if (calEvent.description != null && calEvent.description.substring(0, 4) != "http") {
+                    
+                    $description.append($('<p/>').html('<b>Website: </b> <a href="http://' + calEvent.description + '">' + calEvent.description + '</a>'));
+                }
+                else if (calEvent.description != null && calEvent.description.substring(0, 4) == "http") {
+      
+                    $description.append($('<p/>').html('<b>Website: </b> <a href="' + calEvent.description + '">' + calEvent.description + '</a>'));
+                }
+                $description.append($('<p/>').html('<a href="Edit/' + calEvent.id + '"> Edit </a> | <a href="Details/' + calEvent.id + '"> Details </a> | <a href= "Delete/' + calEvent.id + '" > Delete </a>'));
                 $('#myModal #pDetails').empty().html($description);
 
                 $('#myModal').modal();

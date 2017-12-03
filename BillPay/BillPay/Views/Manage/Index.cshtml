@@ -3,21 +3,15 @@
     ViewBag.Title = "Manage";
 }
 
-<h2>User Page</h2>
+<h2>@(ViewData["FullName"])</h2>
 
 <p class="text-success">@ViewBag.StatusMessage</p>
 <div>
-    <h4>Account Info</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>UserID(Email):</dt>
+        <dt>Email:</dt>
         <dd>
             @Html.Name(User.Identity.Name)
-        </dd>
-        <br />
-        <dt>Full Name:</dt>
-        <dd>
-
         </dd>
         <br />
         <dt>Password:</dt>

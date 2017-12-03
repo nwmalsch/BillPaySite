@@ -12,7 +12,7 @@ using Microsoft.AspNet.Identity;
 namespace BillPay.Controllers
 {
     [Authorize]
-    public class BillsController : Controller
+    public class BillsController : ApplicationBaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 

@@ -13,7 +13,7 @@ using BillPay.Models;
 namespace BillPay.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public class AccountController : ApplicationBaseController
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
@@ -159,23 +159,26 @@ namespace BillPay.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.FirstName, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName };
+
+                var user = new ApplicationUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName
+                };
+
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await _userManager.AddClaimAsync(model.FirstName, new Claim("FirstName", user.FirstName));
-                    await _userManager.AddClaimAsync(user.LastName, new Claim("LastName", user.LastName));
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-
-                    // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
+                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    // Add User Claims for full name. You can check for the success of addition 
-                    
                     return RedirectToAction("Index", "Manage");
                 }
                 AddErrors(result);

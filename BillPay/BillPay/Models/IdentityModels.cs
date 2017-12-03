@@ -11,15 +11,19 @@ namespace BillPay.Models
     public class ApplicationUser : IdentityUser
     {
         public virtual ICollection<Bill> Bills { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
+            //userIdentity.AddClaim(new Claim("First Name", this.FirstName));
+            //userIdentity.AddClaim(new Claim("Last Name", this.LastName));
+
             return userIdentity;
         }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

@@ -11,7 +11,7 @@ using BillPay.Models;
 namespace BillPay.Controllers
 {
     [Authorize]
-    public class ManageController : Controller
+    public class ManageController : ApplicationBaseController
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
@@ -62,7 +62,6 @@ namespace BillPay.Controllers
                 : message == ManageMessageId.AddPhoneSuccess ? "Your phone number was added."
                 : message == ManageMessageId.RemovePhoneSuccess ? "Your phone number was removed."
                 : "";
-
             var userId = User.Identity.GetUserId();
             var model = new IndexViewModel
             {
