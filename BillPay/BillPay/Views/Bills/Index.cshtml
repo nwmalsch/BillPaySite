@@ -12,19 +12,16 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.User.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm })        
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Website)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Cost)
+            @Html.ActionLink("Cost", "Index", new { sortOrder = ViewBag.CostSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DueDate)
+            @Html.ActionLink("Due Date", "Index", new { sortOrder = ViewBag.DateSortParm })
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Color)
@@ -34,9 +31,6 @@
 
 @foreach (BillPay.Models.Bill item in Model.ToList().Where(item => item.User.Email == User.Identity.Name)) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.User.Email)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Name)
         </td>
