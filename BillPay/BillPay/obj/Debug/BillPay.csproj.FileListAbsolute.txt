@@ -244,3 +244,5 @@ C:\Users\Dorian\Source\Repos\BillPaySite\BillPay\BillPay\obj\Debug\BillPay.cspro
 C:\Users\Dorian\Source\Repos\BillPaySite\BillPay\BillPay\obj\Debug\BillPay.csproj.CoreCompileInputs.cache
 C:\Users\Dorian\Source\Repos\BillPaySite\BillPay\BillPay\obj\Debug\BillPay.dll
 C:\Users\Dorian\Source\Repos\BillPaySite\BillPay\BillPay\obj\Debug\BillPay.pdb
+C:\Users\Rene Gist\Source\Repos\BillPaySite\BillPay\BillPay\obj\Debug\BillPay.dll
+C:\Users\Rene Gist\Source\Repos\BillPaySite\BillPay\BillPay\obj\Debug\BillPay.pdb

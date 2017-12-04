@@ -5,9 +5,10 @@
     "\\BillPay\\BillPay",
     "\\BillPay\\BillPay\\Controllers",
     "\\BillPay\\BillPay\\Views",
+    "\\BillPay\\BillPay\\Views\\Account",
     "\\BillPay\\BillPay\\Views\\Bills",
     "\\BillPay\\BillPay\\Views\\Shared"
   ],
-  "SelectedNode": "\\BillPay",
+  "SelectedNode": "\\BillPay\\BillPay\\Controllers\\BillsController.cs",
   "PreviewInSolutionExplorer": false
 }

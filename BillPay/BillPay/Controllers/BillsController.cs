@@ -82,8 +82,16 @@ namespace BillPay.Controllers
             if (ModelState.IsValid)
             {
                 bill.UserID = User.Identity.GetUserId();
-                db.Bills.Add(bill);
-                db.SaveChanges();
+
+                DateTime date = new DateTime(bill.DueDate.Year, bill.DueDate.Month, bill.DueDate.Day);
+
+                for (int i = 0; i <= 11; i++)
+                {
+
+                    bill.DueDate = date.AddMonths(i);
+                    db.Bills.Add(bill);
+                    db.SaveChanges();
+                }
                 return RedirectToAction("Index");
             }
 
