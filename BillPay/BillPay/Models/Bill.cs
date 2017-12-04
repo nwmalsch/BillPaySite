@@ -14,6 +14,7 @@ namespace BillPay.Models
         public string Name { get; set; }
         public string Website { get; set; }
         public decimal Cost { get; set; }
+        [DisplayFormat(DataFormatString = "{0:d}")]
         public DateTime DueDate { get; set; }
         public string Color { get; set; }
 
