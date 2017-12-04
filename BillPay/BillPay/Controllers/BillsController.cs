@@ -177,7 +177,7 @@ namespace BillPay.Controllers
             string id = User.Identity.GetUserId();
             ViewBag.from = from;
             ViewBag.to = to;
-            var bills = db.Bills.Where(x => x.UserID == id && x.DueDate > from && x.DueDate < to).ToList();
+            var bills = db.Bills.Where(x => x.UserID == id && x.DueDate > from && x.DueDate < to).OrderBy(x => x.DueDate).ThenBy(x => x.Name).ToList();
             decimal budget = 0;
 
             foreach (var b in bills)

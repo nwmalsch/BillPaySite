@@ -21,7 +21,7 @@
                         defaultDate: "+1d",
                         changeMonth: true,
                         changeYear: true,
-                        numberOfMonths: 3
+                        numberOfMonths: 1
                     })
                     .on("change", function () {
                         to.datepicker("option", "minDate", getDate(this));
@@ -32,7 +32,7 @@
                 defaultDate: "+2d",
                 changeMonth: true,
                 changeYear: true,
-                numberOfMonths: 3
+                numberOfMonths: 1
             })
                 .on("change", function () {
                     from.datepicker("option", "maxDate", getDate(this));
@@ -57,13 +57,13 @@
     <input type="text" id="from" name="from" placeholder="Click to choose date">
     <label for="to">To</label>
     <input type="text" id="to" name="to" placeholder="Click to choose date">
-    <input type="submit" id="GetBills" value="Get Bills" />
+    <input type="submit" id="GetBills" value="Get Bills" onclick="clear()"/>
+    <hr />
 
 }
 @if (ViewBag.billList != null)
 {
     <table class="table">
-        <thead>Bills</thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
@@ -99,21 +99,29 @@
     <label for="Amount">Enter Starting Amount $</label>
     <input type="number" id="Amount" name="Amount" step="0.01" placeholder="0.00" min="0">
     <input type="submit" id="GetTotal" value="Total" onclick="total()"/>
+    <br />
+    <label for="total">Amount Of Money Left $</label>
     <input type="text" id="total" name="Total" />
-    <div id="blah"></div>
 
     <script>
         function total()
         {
             var amount = document.getElementById("Amount").value;
             var budget = @ViewBag.budget;
-            var totalAmount = parseInt(amount) - parseInt(budget);
+            var totAmount = parseFloat(amount).toFixed(2) - parseFloat(budget).toFixed(2);
+            var totalAmount = parseFloat(totAmount).toFixed(2);
             if (!isNaN(totalAmount)) {
                 document.getElementById('total').value = totalAmount;
                 
             }
 
 
+        }
+
+        function clear()
+        {
+            document.getElementById('total').value = '';
+            document.getElementById('Amount').value = '';
         }
     </script>
 
