@@ -209,7 +209,8 @@ namespace BillPay.Controllers
                     title = b.Name,
                     description = b.Website,
                     start = b.DueDate,
-                    color = b.Color
+                    color = b.Color,
+                    cost = b.Cost
                 };
                 events.Add(e);
             }
@@ -225,4 +226,5 @@ public class Events
     public string description { get; set; }
     public DateTime start { get; set; }
     public string color { get; set; }
+    public decimal cost { get; set; }
 }

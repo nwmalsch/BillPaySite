@@ -43,6 +43,10 @@
                     <li>@Html.ActionLink("Bills", "Index", "Bills")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     }
+                    else
+                    {
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
