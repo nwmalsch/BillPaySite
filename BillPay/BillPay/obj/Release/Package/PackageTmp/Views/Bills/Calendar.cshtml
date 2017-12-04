@@ -28,6 +28,7 @@
                 $('#myModal #eventTitle').text(calEvent.title);
                 var $description = $('<div/>');
                 $description.append($('<p/>').html('<b>Start:</b>' + calEvent.start.format("DD-MMM-YYYY")));
+                $description.append($('<p/>').html('<b>Cost: $</b>' + calEvent.cost.toFixed(2)));
                 if (calEvent.description != null && calEvent.description.substring(0, 4) != "http") {
                     
                     $description.append($('<p/>').html('<b>Website: </b> <a href="http://' + calEvent.description + '">' + calEvent.description + '</a>'));
