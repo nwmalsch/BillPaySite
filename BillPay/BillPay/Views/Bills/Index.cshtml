@@ -29,7 +29,7 @@
         <th></th>
     </tr>
 
-@foreach (BillPay.Models.Bill item in Model.ToList().Where(item => item.User.Email == User.Identity.Name)) {
+@foreach (BillPay.Models.Bill item in Model.ToList().Where(item => item.User.Email == User.Identity.Name && item.DueDate.Month == DateTime.Now.Month)) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Name)

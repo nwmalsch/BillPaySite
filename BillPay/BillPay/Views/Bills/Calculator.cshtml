@@ -21,7 +21,7 @@
                         defaultDate: "+1d",
                         changeMonth: true,
                         changeYear: true,
-                        numberOfMonths: 1
+                        numberOfMonths: 3
                     })
                     .on("change", function () {
                         to.datepicker("option", "minDate", getDate(this));
@@ -32,7 +32,7 @@
                 defaultDate: "+2d",
                 changeMonth: true,
                 changeYear: true,
-                numberOfMonths: 1
+                numberOfMonths: 3
             })
                 .on("change", function () {
                     from.datepicker("option", "maxDate", getDate(this));
